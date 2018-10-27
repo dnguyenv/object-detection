@@ -1,0 +1,59 @@
+# Default values for mec.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 
+  x86: 3
+  ppc64le: 0
+vrtc:
+  name: objectdetection
+  fullnameOverride: objectdetection
+  architecture: x86 # x86 or ppc64le
+  image:
+    x86: 
+      repository: vzncluster.icp:8500/object-detection/vrtc
+      tag: x86
+      pullPolicy: Always
+    ppc64le:
+      repository: vzncluster.icp:8500/object-detection/vrtc
+      tag: ppc64le
+      pullPolicy: Always      
+    ibmcloud:
+      repository: registry.ng.bluemix.net/objectdetection/vrtc
+      tag: ibmcloud
+      pullPolicy: Always            
+  service:
+    internal:
+      type: ClusterIP
+      port: 5000
+      name: objectdetection
+    external:
+      type: NodePort
+      port: 30006
+      name: vrtc-service
+  deployment:
+    name:
+      x86: x86deployment
+      ppc64le: ppc64ledeployment
+  enableGPU: no
+  gpuNum: 2
+#ingress:
+#  enabled: false
+#  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+#  path: /
+#  hosts:
+#    - chart-example.local
+#  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+#resources: {}
+
+#nodeSelector: {}
+
+#tolerations: []
+
+#affinity: {}
