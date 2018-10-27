@@ -10,9 +10,9 @@ spec:
 #    - mec-poc.us-south.containers.appdomain.cloud
 #    secretName: mec-poc
   rules:
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: {{ .Values.vrtc.service.internal.name }}
-          servicePort: 5000
+    - http:
+       paths:
+       - path: /
+         backend:
+           serviceName: {{ .Values.vrtc.service.internal.name }}
+           servicePort: 5000
