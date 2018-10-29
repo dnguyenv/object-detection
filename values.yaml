@@ -4,7 +4,7 @@
 
 replicaCount: 
   x86: 3
-  ppc64le: 0
+  ppc64le: 5
 vrtc:
   name: objectdetection
   fullnameOverride: objectdetection
