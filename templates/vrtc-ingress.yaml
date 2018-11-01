@@ -4,6 +4,7 @@ metadata:
   name: {{ .Values.vrtc.name }}
   annotations:  
     nginx.ingress.kubernetes.io/rewrite-target: /
+  namespace: object-detection
 spec:
 #  tls:
 #  - hosts:
