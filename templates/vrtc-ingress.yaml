@@ -12,7 +12,11 @@ spec:
   rules:
     - http:
        paths:
-       - path: /
+       - path: /intel
          backend:
-           serviceName: {{ .Values.vrtc.service.internal.name }}
+           serviceName: {{ .Values.vrtc.service.name.x86 }}
+           servicePort: 5000
+       - path: /power
+         backend:
+           serviceName: {{ .Values.vrtc.service.name.x86 }}
            servicePort: 5000

@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 
-  x86: 3
-  ppc64le: 5
+  x86: 2
+  ppc64le: 2
 vrtc:
   name: objectdetection
   fullnameOverride: objectdetection
@@ -31,6 +31,9 @@ vrtc:
       type: NodePort
       port: 30006
       name: vrtc-service
+    name:
+      x86: x86service
+      ppc64le: ppc64leservice
   deployment:
     name:
       x86: x86deployment

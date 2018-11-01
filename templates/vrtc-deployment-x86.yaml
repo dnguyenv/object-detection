@@ -19,7 +19,7 @@ spec:
       labels:
         app: {{ template "vrtc.name" . }}
         release: {{ .Release.Name }}
-        component: {{ .Values.vrtc.name }}
+        component: {{ .Values.vrtc.deployment.name.x86 }}
     spec:
       containers:
         - name: {{ .Values.vrtc.name }}
