@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: {{ .Values.vrtc.name }}
   annotations:  
-    ingress.kubernetes.io/rewrites: "serviceName={{ .Values.vrtc.service.name.x86 }} rewrite=/"
+    ingress.kubernetes.io/rewrite-target: /
   namespace: object-detection
 spec:
   rules:
