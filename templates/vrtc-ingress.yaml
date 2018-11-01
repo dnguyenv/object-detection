@@ -4,6 +4,9 @@ metadata:
   name: {{ .Values.vrtc.name }}
   annotations:  
     ingress.kubernetes.io/rewrite-target: /
+    ingress.kubernetes.io/proxy-read-timeout: "60s"
+    ingress.kubernetes.io/proxy-send-timeout: "60s"
+    ingress.kubernetes.io/proxy-connect-timeout: "60s"
   namespace: object-detection
 spec:
   rules:

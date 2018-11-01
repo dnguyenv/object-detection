@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 
-  x86: 2
-  ppc64le: 2
+  x86: 1
+  ppc64le: 1
 vrtc:
   name: objectdetection
   fullnameOverride: objectdetection
