@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: {{ .Values.vrtc.name }}
   annotations:  
-    nginx.org/rewrites: "serviceName={{ .Values.vrtc.service.name.x86 }} rewrite=/ serviceName={{ .Values.vrtc.service.name.ppc64le }} rewrite=/"
+    nginx.org/rewrites: "serviceName=x86service rewrite=/ serviceName=ppc64leservice rewrite=/"
 spec:
 #  tls:
 #  - hosts:
