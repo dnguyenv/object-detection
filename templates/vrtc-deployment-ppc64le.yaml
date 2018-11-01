@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   name: {{ .Values.vrtc.deployment.name.ppc64le }}
   labels:
-    app: {{ template "vrtc.fullname" . }}
+    app: {{ template "vrtc.name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     release: {{ .Release.Name }}
-    component: {{ .Values.vrtc.name }}
+    component: {{ .Values.vrtc.deployment.name.ppc64le }}
 spec:
   replicas: {{ .Values.replicaCount.ppc64le }}
   selector:
     matchLabels:
       app: {{ template "vrtc.name" . }}
       release: {{ .Release.Name }}
-      component: {{ .Values.vrtc.name }}
+      component: {{ .Values.vrtc.deployment.name.ppc64le }}
   template:
     metadata:
       labels:
         app: {{ template "vrtc.name" . }}
         release: {{ .Release.Name }}
-        component: {{ .Values.vrtc.name }}
+        component: {{ .Values.vrtc.deployment.name.ppc64le }}
     spec:
       containers:
         - name: {{ .Values.vrtc.name }}

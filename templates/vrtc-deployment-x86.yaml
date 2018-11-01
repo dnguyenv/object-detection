@@ -3,17 +3,17 @@ kind: Deployment
 metadata:
   name: {{ .Values.vrtc.deployment.name.x86 }}
   labels:
-    app: {{ template "vrtc.fullname" . }}
+    app: {{ template "vrtc.name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     release: {{ .Release.Name }}
-    component: {{ .Values.vrtc.name }}
+    component: {{ .Values.vrtc.deployment.name.x86 }}
 spec:
   replicas: {{ .Values.replicaCount.x86 }}
   selector:
     matchLabels:
       app: {{ template "vrtc.name" . }}
       release: {{ .Release.Name }}
-      component: {{ .Values.vrtc.name }}
+      component: {{ .Values.vrtc.deployment.name.x86 }}
   template:
     metadata:
       labels:
