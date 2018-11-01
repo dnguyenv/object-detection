@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: {{ .Values.vrtc.name }}
   annotations:  
-    icp.management.ibm.com/rewrite-target: "/"
+    nginx.org/rewrites: "serviceName=x86service rewrite=/ ;serviceName=ppc64leservice rewrite=/"
 spec:
 #  tls:
 #  - hosts:
