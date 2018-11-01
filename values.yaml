@@ -38,7 +38,7 @@ vrtc:
     name:
       x86: x86deployment
       ppc64le: ppc64ledeployment
-  enableGPU: no
+  enableGPU: yes
   gpuNum: 2
 #ingress:
 #  enabled: false
