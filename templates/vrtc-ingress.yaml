@@ -2,8 +2,8 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ .Values.vrtc.name }}
-#  annotations:  
-#    ingress.bluemix.net/rewrite-path: "serviceName=objectdetection rewrite=/"
+  annotations:  
+    nginx.org/rewrites: "serviceName={{ .Values.vrtc.service.name.x86 }} rewrite=/ serviceName={{ .Values.vrtc.service.name.ppc64le }} rewrite=/"
 spec:
 #  tls:
 #  - hosts:
@@ -12,11 +12,11 @@ spec:
   rules:
     - http:
        paths:
-       - path: /
+       - path: /vrtc-intel
          backend:
            serviceName: {{ .Values.vrtc.service.name.x86 }}
            servicePort: 5000
-       - path: /power
+       - path: /vrtc-power
          backend:
            serviceName: {{ .Values.vrtc.service.name.ppc64le }}
            servicePort: 5000
